@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./initDb');
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -8,6 +8,11 @@ const db = require('./db');
 const {
   sendSMS
 } = require('./sms');
+const {
+  initDatabase
+} = require('./initDb');
+
+initDatabase();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
