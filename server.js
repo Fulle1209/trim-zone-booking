@@ -22,47 +22,51 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.delete('/api/admin/appointments/:id', (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
 
   const existing = db.prepare('SELECT * FROM appointments WHERE id = ?').get(id);
 
   if (!existing) {
-    return res.status(404).json({ error: 'Booking ikke fundet.' });
+    return res.status(404).json({
+      error: 'Booking ikke fundet.'
+    });
   }
 
   db.prepare('DELETE FROM appointments WHERE id = ?').run(id);
 
-  res.json({ success: true, message: 'Booking aflyst.' });
+  res.json({
+    success: true,
+    message: 'Booking aflyst.'
+  });
 });
 
 const OPENING_HOURS = {
   1: {
     start: '16:00',
-    end: '23:00'
+    end: '22:00'
   }, // mandag
   2: {
     start: '16:00',
-    end: '23:00'
+    end: '19:00'
   }, // tirsdag
-  3: {
-    start: '16:00',
-    end: '23:00'
-  }, // onsdag
+  3: null, // onsdag lukket
   4: {
     start: '16:00',
-    end: '23:00'
+    end: '22:00'
   }, // torsdag
   5: {
     start: '16:00',
-    end: '23:00'
+    end: '19:00'
   }, // fredag
   6: {
-    start: '16:00',
-    end: '23:00'
+    start: '12:00',
+    end: '22:00'
   }, // lørdag
   0: {
-    start: '16:00',
-    end: '23:00'
+    start: '12:00',
+    end: '22:00'
   } // søndag
 };
 

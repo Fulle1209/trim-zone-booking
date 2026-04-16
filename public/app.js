@@ -90,6 +90,12 @@ async function loadServices() {
     `;
 
     card.querySelector('button').addEventListener('click', async () => {
+      document.querySelectorAll('.service-card').forEach((item) => {
+        item.classList.remove('active-service');
+      });
+
+      card.classList.add('active-service');
+
       selectedService = service;
       selectedSlot = null;
       selectedServiceEl.textContent = `${service.name} • ${service.price} kr. • ${service.duration} min`;
