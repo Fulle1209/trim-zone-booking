@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trim Zone Admin</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .admin-wrap {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: rgba(255,255,255,0.03);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .admin-table th,
+      .admin-table td {
+        padding: 16px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .admin-table th {
+        color: #d8b36a;
+      }
+
+      .admin-title {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrap">
+      <h1 class="admin-title">Trim Zone Admin</h1>
+      <p>Her kan du se alle bookinger.</p>
+
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Dato</th>
+            <th>Tid</th>
+            <th>Navn</th>
+            <th>Telefon</th>
+            <th>Behandling</th>
+          </tr>
+        </thead>
+        <tbody id="appointmentsBody"></tbody>
+      </table>
+    </div>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>
