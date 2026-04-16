@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trim Zone Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <main class="page">
+    <section class="left-panel">
+      <div class="hero card">
+        <div class="hero-top">
+          <img src="./trimzone-logo.jpg" alt="Trim Zone logo" class="logo" />
+          <div>
+            <span class="badge">Premium barber booking</span>
+            <h1>Book din næste tid hos <span>Trim Zone</span></h1>
+            <p class="hero-text">
+              Vælg behandling, vælg dag og find en ledig tid på få sekunder.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Behandlinger</p>
+          <h2>Vælg den behandling der passer dig</h2>
+        </div>
+      </div>
+
+      <div id="services" class="services"></div>
+    </section>
+
+    <aside class="right-panel">
+      <div class="card shop-card">
+        <div class="shop-head">
+          <div>
+            <h2>Trim Zone</h2>
+            <p class="muted">Kælderbarber • Siden 2024</p>
+          </div>
+          <span class="status-dot"></span>
+        </div>
+
+        <div class="hours-list">
+          <div><span>Alle dage</span><strong>16:00 - 23:00</strong></div>
+        </div>
+      </div>
+
+      <div class="card booking-card">
+        <div class="booking-head">
+          <div>
+            <p class="eyebrow">Booking</p>
+            <h3>Vælg tid og afslut booking</h3>
+          </div>
+        </div>
+
+        <label>Valgt behandling</label>
+        <div id="selectedService" class="selected-service muted">Vælg en behandling</div>
+
+        <div class="week-nav-row">
+          <div>
+            <label>Vælg dag</label>
+            <p class="week-subtext">Viser 7 dage ad gangen</p>
+          </div>
+          <div class="week-actions">
+            <button type="button" id="prevWeekBtn" class="nav-btn">←</button>
+            <button type="button" id="nextWeekBtn" class="nav-btn">→</button>
+          </div>
+        </div>
+
+        <div id="dateScroller" class="date-scroller"></div>
+
+        <label>Ledige tider</label>
+        <div id="slots" class="slots"></div>
+
+        <div class="form-grid">
+          <div>
+            <label>Navn</label>
+            <input type="text" id="name" placeholder="Dit navn" />
+          </div>
+          <div>
+            <label>Telefonnummer</label>
+            <input type="tel" id="phone" placeholder="+45 12 34 56 78" />
+          </div>
+        </div>
+
+        <button id="bookBtn">Book nu</button>
+        <p id="message" class="message"></p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+
+</html>
