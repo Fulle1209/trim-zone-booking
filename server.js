@@ -21,6 +21,20 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.delete('/api/admin/appointments/:id', (req, res) => {
+  const { id } = req.params;
+
+  const existing = db.prepare('SELECT * FROM appointments WHERE id = ?').get(id);
+
+  if (!existing) {
+    return res.status(404).json({ error: 'Booking ikke fundet.' });
+  }
+
+  db.prepare('DELETE FROM appointments WHERE id = ?').run(id);
+
+  res.json({ success: true, message: 'Booking aflyst.' });
+});
+
 const OPENING_HOURS = {
   1: {
     start: '16:00',
